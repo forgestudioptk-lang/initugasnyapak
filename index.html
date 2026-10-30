@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Info10 – Rangkuman Informatika Kelas 10 Bab 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2557e7;--blue-d:#1b3fb0;--navy:#0b1b3f;--ink:#1c2740;--mut:#5d6b88;--line:#e4e9f2;--bg:#f6f8fc;--sky:#eaf0ff;--org:#ff8a3d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.7;font-size:16px}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--org);z-index:60}
+/* navbar */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;color:var(--navy)}
+.logo b{width:36px;height:36px;border-radius:10px;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:.95rem}
+.menu{display:flex;gap:28px;font-weight:600;font-size:.94rem;color:var(--mut)}
+.menu a:hover{color:var(--blue)}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:700;padding:12px 24px;border-radius:10px;transition:.2s;font-size:.95rem}
+.btn:hover{background:var(--blue-d);transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--blue);border:1.5px solid #c7d4f8}
+.btn.ghost:hover{background:var(--sky)}
+/* hero */
+.hero{background:linear-gradient(135deg,#0b1b3f 0%,#1b3fb0 100%);color:#fff;padding:84px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.badge{display:inline-block;background:rgba(255,255,255,.14);padding:6px 16px;border-radius:99px;font-size:.85rem;font-weight:600;margin-bottom:20px}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);line-height:1.15;font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+.hero p{color:#c9d6f7;font-size:1.08rem;max-width:520px;margin-bottom:32px}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn{background:var(--org);color:#1a1209}
+.hero .btn:hover{background:#ffa062}
+.hero .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.hero .btn.ghost:hover{background:rgba(255,255,255,.1)}
+.code{background:#0a1530;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1)}
+.code .dots{display:flex;gap:7px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.code .dots i{width:11px;height:11px;border-radius:50%;background:#ff5f57}
+.code .dots i:nth-child(2){background:#febc2e}.code .dots i:nth-child(3){background:#28c840}
+.code pre{padding:22px 24px;font:500 .93rem/1.9 ui-monospace,Consolas,monospace;color:#d6e1ff;overflow-x:auto}
+.code .k{color:#ff9d5c}.code .f{color:#7fd0ff}.code .c{color:#6f82ad}.code .s{color:#8be0a4}
+/* stats */
+.stats{margin-top:-48px;position:relative;z-index:2}
+.stats .wrap>div{background:#fff;border-radius:16px;box-shadow:0 12px 40px rgba(20,40,100,.12);display:grid;grid-template-columns:repeat(4,1fr);padding:28px 12px}
+.stat{text-align:center;padding:0 12px;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat b{display:block;font-size:2rem;font-weight:800;color:var(--blue);line-height:1.2}
+.stat span{font-size:.9rem;color:var(--mut)}
+/* layout */
+.layout{display:grid;grid-template-columns:260px 1fr;gap:48px;padding:72px 0 40px;align-items:start}
+.toc{position:sticky;top:96px;background:var(--bg);border-radius:16px;padding:22px}
+.toc h4{font-size:.95rem;margin-bottom:12px;color:var(--navy)}
+.toc a{display:block;padding:9px 12px;border-radius:8px;font-size:.9rem;font-weight:600;color:var(--mut);margin-bottom:2px}
+.toc a:hover{background:#fff;color:var(--blue)}
+.toc a.on{background:var(--blue);color:#fff}
+article section{margin-bottom:72px}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.ico{flex:none;width:48px;height:48px;border-radius:14px;background:var(--sky);display:grid;place-items:center;font-size:1.4rem}
+h2{font-size:1.75rem;line-height:1.3;color:var(--navy);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.1rem;color:var(--navy);font-weight:700;margin-bottom:8px}
+article p{color:var(--mut);margin-bottom:16px}
+article p b,article li b{color:var(--ink)}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;transition:.2s}
+.box:hover{box-shadow:0 12px 30px rgba(20,40,100,.09);transform:translateY(-3px)}
+.box p{margin:0;font-size:.94rem}
+.box .ico{width:42px;height:42px;font-size:1.2rem;margin-bottom:14px;border-radius:12px}
+.callout{background:var(--sky);border-radius:16px;padding:22px 26px;margin-top:22px;display:flex;gap:16px}
+.callout p{margin:0;color:var(--ink)}
+ul.chk{list-style:none}
+ul.chk li{padding-left:30px;position:relative;margin-bottom:10px;color:var(--mut)}
+ul.chk li::before{content:"✓";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--blue);color:#fff;font-size:.72rem;display:grid;place-items:center}
+/* revolusi */
+.rev{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+.rev .box{text-align:left;position:relative;padding-top:30px}
+.rev .box em{position:absolute;top:-14px;left:20px;background:var(--navy);color:#fff;font-style:normal;font-weight:800;font-size:.85rem;padding:4px 14px;border-radius:99px}
+.rev .box:last-child{background:var(--blue);border-color:var(--blue)}
+.rev .box:last-child h3,.rev .box:last-child p{color:#fff}
+.rev .box:last-child em{background:var(--org);color:#1a1209}
+.rev small{display:block;color:var(--blue);font-weight:700;font-size:.8rem;margin-bottom:6px}
+.rev .box:last-child small{color:#ffd0ae}
+/* tabel */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:16px;margin-top:18px}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.94rem}
+th{background:var(--navy);color:#fff;text-align:left;padding:14px 18px;font-weight:700}
+td{padding:14px 18px;border-top:1px solid var(--line);color:var(--mut);vertical-align:top}
+td:first-child{font-weight:700;color:var(--ink);background:var(--bg)}
+/* tabs */
+.tabs{display:inline-flex;background:var(--bg);padding:5px;border-radius:12px;margin:8px 0 20px}
+.tabs button{border:0;background:none;font:700 .94rem inherit;font-family:inherit;padding:10px 24px;border-radius:9px;cursor:pointer;color:var(--mut)}
+.tabs button.on{background:#fff;color:var(--blue);box-shadow:0 2px 8px rgba(20,40,100,.12)}
+.panel{display:none}.panel.on{display:block}
+/* langkah */
+.step{display:flex;gap:16px;margin-bottom:18px}
+.step b.n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:.95rem}
+.step p{margin:0}
+/* cta + footer */
+.cta{background:linear-gradient(135deg,#1b3fb0,#2557e7);color:#fff;border-radius:24px;padding:48px;text-align:center;margin:0 0 80px}
+.cta h2{color:#fff;margin-bottom:10px}
+.cta p{color:#d3deff;max-width:560px;margin:0 auto 24px}
+.cta .btn{background:#fff;color:var(--blue)}
+footer{background:var(--navy);color:#9fb0d6;padding:56px 0 28px;font-size:.92rem}
+footer .g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer h5{color:#fff;margin-bottom:12px;font-size:.98rem}
+footer a{display:block;margin-bottom:8px}footer a:hover{color:#fff}
+footer .logo{color:#fff;margin-bottom:12px}
+footer .cp{padding-top:22px;text-align:center;font-size:.85rem}
+@media(max-width:960px){
+  .hero .wrap,.layout{grid-template-columns:1fr}
+  .toc{position:static}.menu{display:none}
+  .rev,.cols3{grid-template-columns:repeat(2,1fr)}
+  .stats .wrap>div{grid-template-columns:repeat(2,1fr);row-gap:20px}
+  .stat:nth-child(2){border:0}
+}
+@media(max-width:600px){
+  .cols,.cols3,.rev,footer .g{grid-template-columns:1fr}
+  .hero{padding:56px 0 80px}.cta{padding:34px 22px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#" class="logo"><b>i10</b>Info10</a>
+    <nav class="menu">
+      <a href="#apa">Pengertian</a><a href="#industri">Industri 4.0</a><a href="#dipelajari">Materi</a><a href="#pancasila">Profil Pelajar</a><a href="#generik">Keterampilan</a>
+    </nav>
+    <a href="#apa" class="btn">Mulai Belajar</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">Informatika Kelas 10 · Bab 1</span>
+      <h1>Informatika dan Keterampilan Generik</h1>
+      <p>Rangkuman lengkap untuk memahami apa itu informatika, perannya di era Industri 4.0, dan keterampilan penting yang perlu kamu kuasai di SMA.</p>
+      <div class="acts">
+        <a href="#apa" class="btn">Baca Rangkuman</a>
+        <a href="#generik" class="btn ghost">Keterampilan Generik</a>
+      </div>
+    </div>
+    <div class="code" aria-hidden="true">
+      <div class="dots"><i></i><i></i><i></i></div>
+<pre><span class="c"># berpikir komputasional</span>
+<span class="k">def</span> <span class="f">selesaikan</span>(masalah):
+    bagian = <span class="f">pecah</span>(masalah)
+    pola   = <span class="f">cari_pola</span>(bagian)
+    langkah = <span class="f">susun</span>(pola)
+    <span class="k">return</span> <span class="f">jalankan</span>(langkah)
+
+<span class="f">print</span>(<span class="s">"Halo, Informatika!"</span>)</pre>
+    </div>
+  </div>
+</section>
+
+<div class="stats"><div class="wrap"><div>
+  <div class="stat"><b>4</b><span>Revolusi industri</span></div>
+  <div class="stat"><b>8</b><span>Elemen pengetahuan</span></div>
+  <div class="stat"><b>6</b><span>Dimensi Profil Pelajar</span></div>
+  <div class="stat"><b>2</b><span>Keterampilan generik</span></div>
+</div></div></div>
+
+<main class="wrap layout">
+  <aside class="toc" aria-label="Daftar isi">
+    <h4>Daftar Isi</h4>
+    <a href="#apa">Apa &amp; Mengapa Informatika</a>
+    <a href="#industri">Era Industri 4.0</a>
+    <a href="#dipelajari">Yang Dipelajari</a>
+    <a href="#kelas10">Kelas 10 vs SMP</a>
+    <a href="#pancasila">Profil Pelajar Pancasila</a>
+    <a href="#generik">Keterampilan Generik</a>
+    <a href="#infografis">Infografis</a>
+  </aside>
+
+  <article>
+    <section id="apa">
+      <div class="sec-h"><div class="ico">💻</div><h2>Apa dan Mengapa Informatika?</h2></div>
+      <p>Informatika adalah ilmu yang mempelajari <b>komputasi</b>: cara mengolah, menyimpan, mengirim, dan menganalisis data serta informasi dengan bantuan komputer. Cakupannya meliputi perangkat keras, perangkat lunak, jaringan, data, dan cara berpikir untuk memecahkan masalah.</p>
+      <p>Belajar informatika bukan sekadar bisa memakai komputer. Kamu diajak memahami cara kerja teknologi dan membuat solusi sendiri.</p>
+      <div class="cols">
+        <div class="box"><div class="ico">🌐</div><h3>Teknologi ada di mana-mana</h3><p>Kesehatan, pertanian, transportasi, keuangan, sampai hiburan semuanya bergantung pada teknologi digital.</p></div>
+        <div class="box"><div class="ico">🧠</div><h3>Melatih cara berpikir</h3><p>Memecah masalah, mengenali pola, dan menyusun langkah penyelesaian secara runtut.</p></div>
+        <div class="box"><div class="ico">🚀</div><h3>Menjadi pencipta</h3><p>Tidak hanya menjadi pengguna, tetapi mampu membuat aplikasi dan solusi baru.</p></div>
+        <div class="box"><div class="ico">🛡️</div><h3>Bijak bermedia digital</h3><p>Memahami etika, keamanan, dan dampak teknologi bagi masyarakat.</p></div>
+      </div>
+    </section>
+
+    <section id="industri">
+      <div class="sec-h"><div class="ico">🏭</div><h2>Informatika di Era Industri 4.0</h2></div>
+      <p>Industri 4.0 ditandai menyatunya dunia fisik dan digital lewat <b>Internet of Things (IoT)</b>, <b>kecerdasan artifisial (AI)</b>, <b>big data</b>, komputasi awan, dan robotika. Semua teknologi itu dibangun di atas ilmu informatika.</p>
+      <h3 style="margin-top:28px">Empat Revolusi Industri</h3>
+      <div class="rev">
+        <div class="box"><em>1.0</em><small>Akhir abad ke-18</small><h3>Mekanisasi</h3><p>Mesin uap dan tenaga air menggantikan tenaga manusia dan hewan.</p></div>
+        <div class="box"><em>2.0</em><small>Awal abad ke-20</small><h3>Produksi massal</h3><p>Listrik dan lini perakitan membuat produksi berjalan cepat dan besar.</p></div>
+        <div class="box"><em>3.0</em><small>Sekitar 1970-an</small><h3>Otomasi</h3><p>Elektronika dan komputer mengotomatiskan proses produksi.</p></div>
+        <div class="box"><em>4.0</em><small>Masa kini</small><h3>Cyber-physical</h3><p>Internet, IoT, AI, dan data menghubungkan mesin dan manusia.</p></div>
+      </div>
+      <div class="callout"><div style="font-size:1.5rem">💡</div><p><b>Intinya:</b> sumber kemajuan tiap revolusi berbeda, yaitu uap, listrik, komputer, lalu data. Di era 4.0, data dan perangkat lunak menjadi kunci, sehingga kemampuan informatika makin dibutuhkan.</p></div>
+    </section>
+
+    <section id="dipelajari">
+      <div class="sec-h"><div class="ico">📚</div><h2>Apa yang Dipelajari dalam Informatika?</h2></div>
+      <p>Mata pelajaran Informatika dikelompokkan ke dalam delapan elemen pengetahuan yang saling berkaitan.</p>
+      <div class="cols3">
+        <div class="box"><div class="ico">🧩</div><h3>Berpikir Komputasional</h3><p>Dekomposisi, pola, abstraksi, dan algoritma.</p></div>
+        <div class="box"><div class="ico">📱</div><h3>TIK</h3><p>Memakai perangkat dan aplikasi untuk mengolah informasi.</p></div>
+        <div class="box"><div class="ico">🖥️</div><h3>Sistem Komputer</h3><p>Perangkat keras, perangkat lunak, dan sistem operasi.</p></div>
+        <div class="box"><div class="ico">📡</div><h3>Jaringan &amp; Internet</h3><p>Cara perangkat saling terhubung dan bertukar data.</p></div>
+        <div class="box"><div class="ico">📊</div><h3>Analisis Data</h3><p>Mengumpulkan, mengolah, dan menafsirkan data.</p></div>
+        <div class="box"><div class="ico">⌨️</div><h3>Algoritma &amp; Pemrograman</h3><p>Menyusun langkah solusi dan menuliskannya jadi program.</p></div>
+        <div class="box"><div class="ico">⚖️</div><h3>Dampak Sosial</h3><p>Etika, keamanan, dan pengaruh teknologi bagi masyarakat.</p></div>
+        <div class="box"><div class="ico">🔗</div><h3>Praktik Lintas Bidang</h3><p>Menerapkan informatika pada proyek bidang lain.</p></div>
+      </div>
+    </section>
+
+    <section id="kelas10">
+      <div class="sec-h"><div class="ico">🎓</div><h2>Kelas 10 vs Informatika SMP</h2></div>
+      <p>Di kelas 10, elemen yang sama dipelajari lebih mendalam dan lebih analitis dibanding saat SMP.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Aspek</th><th>SMP</th><th>Kelas 10 (SMA)</th></tr></thead>
+        <tbody>
+          <tr><td>Tujuan</td><td>Mengenal dan memakai teknologi dasar</td><td>Memahami cara kerja, menganalisis, dan membuat solusi</td></tr>
+          <tr><td>Berpikir komputasional</td><td>Konsep dan contoh sederhana</td><td>Diterapkan pada masalah kompleks dan kontekstual</td></tr>
+          <tr><td>Pemrograman</td><td>Pengenalan algoritma, pemrograman visual atau dasar</td><td>Pemrograman teks dan struktur kontrol yang lebih utuh</td></tr>
+          <tr><td>Data &amp; jaringan</td><td>Pengolahan data sederhana, pengenalan internet</td><td>Analisis data, cara kerja jaringan, dan keamanan</td></tr>
+          <tr><td>Proyek</td><td>Latihan terbimbing</td><td>Proyek kolaboratif lintas bidang</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="pancasila">
+      <div class="sec-h"><div class="ico">🇮🇩</div><h2>Informatika dan Profil Pelajar Pancasila</h2></div>
+      <p>Belajar informatika ikut membentuk enam dimensi Profil Pelajar Pancasila.</p>
+      <div class="cols3">
+        <div class="box"><h3>Beriman, bertakwa, berakhlak mulia</h3><p>Memakai teknologi secara etis, jujur, dan menghargai hak cipta.</p></div>
+        <div class="box"><h3>Berkebinekaan global</h3><p>Berkomunikasi lintas budaya di ruang digital dengan saling menghargai.</p></div>
+        <div class="box"><h3>Bergotong royong</h3><p>Bekerja sama dalam proyek, berbagi tugas, dan saling membantu.</p></div>
+        <div class="box"><h3>Mandiri</h3><p>Belajar dan memecahkan masalah sendiri dengan mencari sumber belajar.</p></div>
+        <div class="box"><h3>Bernalar kritis</h3><p>Menilai kebenaran informasi, menganalisis data, dan berpikir logis.</p></div>
+        <div class="box"><h3>Kreatif</h3><p>Menciptakan program, desain, dan solusi baru dengan teknologi.</p></div>
+      </div>
+    </section>
+
+    <section id="generik">
+      <div class="sec-h"><div class="ico">🤝</div><h2>Keterampilan Generik</h2></div>
+      <p>Keterampilan generik adalah keterampilan umum yang berguna di semua bidang, tidak hanya informatika.</p>
+      <div class="tabs" role="tablist">
+        <button class="on" data-t="kol" role="tab">Kolaborasi</button>
+        <button data-t="kom" role="tab">Komunikasi</button>
+      </div>
+      <div class="panel on" id="kol">
+        <p>Kolaborasi adalah bekerja bersama dalam tim untuk mencapai tujuan yang sama, dengan setiap anggota memberi kontribusi sesuai perannya.</p>
+        <ul class="chk">
+          <li><b>Tujuan bersama:</b> semua anggota paham apa yang ingin dicapai.</li>
+          <li><b>Pembagian peran:</b> tugas dibagi sesuai kemampuan dan kesepakatan.</li>
+          <li><b>Saling percaya dan menghargai:</b> mau mendengar pendapat orang lain.</li>
+          <li><b>Tanggung jawab:</b> menyelesaikan bagian masing-masing tepat waktu.</li>
+          <li><b>Mengelola konflik:</b> perbedaan pendapat dibahas dengan kepala dingin.</li>
+        </ul>
+        <p>Alat bantu: dokumen dan slide daring bersama, papan tugas, grup percakapan, dan rapat video.</p>
+      </div>
+      <div class="panel" id="kom">
+        <p>Komunikasi adalah menyampaikan dan menerima pesan sehingga maknanya dipahami dengan benar oleh kedua pihak.</p>
+        <ul class="chk">
+          <li><b>Unsur dasar:</b> pengirim, pesan, saluran, penerima, dan umpan balik.</li>
+          <li><b>Pesan efektif:</b> jelas, ringkas, dan sesuai audiens.</li>
+          <li><b>Mendengarkan aktif:</b> sama pentingnya dengan berbicara.</li>
+          <li><b>Etika digital:</b> sopan, tidak menyebar hoaks, dan menjaga privasi.</li>
+          <li><b>Beragam bentuk:</b> lisan, tulisan, maupun visual seperti infografis.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="infografis">
+      <div class="sec-h"><div class="ico">🎨</div><h2>Infografis</h2></div>
+      <p>Infografis (informasi + grafis) menyajikan informasi atau data yang rumit secara visual, memadukan teks singkat, gambar, ikon, diagram, dan warna agar mudah dipahami dan diingat. Jenisnya antara lain statistik, linimasa, proses, perbandingan, hierarki, dan peta.</p>
+      <div class="cols">
+        <div class="box">
+          <h3>Ciri infografis yang baik</h3>
+          <ul class="chk" style="margin-top:14px">
+            <li>Satu topik dengan pesan utama yang jelas</li>
+            <li>Teks singkat dan mudah dibaca</li>
+            <li>Alur baca teratur</li>
+            <li>Warna dan huruf konsisten</li>
+            <li>Data akurat dengan sumber</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3 style="margin-bottom:16px">Langkah membuatnya</h3>
+          <div class="step"><b class="n">1</b><p>Tentukan topik, tujuan, dan sasaran pembaca.</p></div>
+          <div class="step"><b class="n">2</b><p>Kumpulkan data yang akurat.</p></div>
+          <div class="step"><b class="n">3</b><p>Pilih jenis infografis dan rancang tata letak.</p></div>
+          <div class="step"><b class="n">4</b><p>Buat dengan aplikasi desain seperti Canva.</p></div>
+          <div class="step"><b class="n">5</b><p>Periksa, minta masukan, lalu bagikan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <h2>Siap lanjut ke bab berikutnya?</h2>
+      <p>Setelah memahami dasar informatika dan keterampilan generik, kamu siap belajar berpikir komputasional.</p>
+      <a href="#" class="btn">Kembali ke Atas</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div><a href="#" class="logo"><b>i10</b>Info10</a><p>Rangkuman materi Informatika Kelas 10 untuk membantu belajar lebih mudah. Gunakan bersama buku teks resmi.</p></div>
+      <div><h5>Materi Bab 1</h5><a href="#apa">Apa &amp; Mengapa</a><a href="#industri">Industri 4.0</a><a href="#dipelajari">Yang Dipelajari</a></div>
+      <div><h5>Lainnya</h5><a href="#pancasila">Profil Pelajar Pancasila</a><a href="#generik">Keterampilan Generik</a><a href="#infografis">Infografis</a></div>
+    </div>
+    <p class="cp">© 2026 Info10. Dibuat untuk keperluan belajar.</p>
+  </div>
+</footer>
+
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});
+const links=[...document.querySelectorAll('.toc a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('article section').forEach(s=>io.observe(s));
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===b.dataset.t));
+});
+</script>
+</body>
+</html>
